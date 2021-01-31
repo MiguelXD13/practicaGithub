@@ -25,11 +25,7 @@ public class ArraysEntornos {
         contador=sc.nextInt();
         
         int numeros[] = new int[contador];
-        if(contador<10){
-            System.out.println("No puedes superar el maximo de 10 numeros leidos, introducelo de nuevo");
-            contador=sc.nextInt();
-        }else{
-            
+        validaContador(contador);
         for (int i = 0; i < contador; i++) {
             System.out.println("Introduce numeros");
             numeros[i] = sc.nextInt();
@@ -42,8 +38,8 @@ public class ArraysEntornos {
                     
                 }
             }
-        }
-
+        
+        
         Arrays.sort(numeros);
         System.out.println("Los numeros introducidos son ");
         for (int i = 0; i < numeros.length; i++) {
@@ -51,6 +47,13 @@ public class ArraysEntornos {
         }
         
        } 
+    
+    public static boolean validaContador (int cont){
+        if(cont>10){
+            return false;           
+        }
+        return true;
+    }
 
     }
 
